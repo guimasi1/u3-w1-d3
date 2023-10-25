@@ -22,7 +22,7 @@ class BookList extends Component {
       this.setState({ ...this.state, selectedCategory: categoryOfBooks });
     };
     return (
-      <Container>
+      <Container className="mb-5">
         <Form>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label className="d-block text-center">Search</Form.Label>

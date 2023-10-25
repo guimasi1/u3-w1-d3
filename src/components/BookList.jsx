@@ -31,7 +31,10 @@ class BookList extends Component {
               placeholder="Search for your favourite book"
               value={this.state.researchValue}
               onChange={(e) => {
-                this.setState({ ...this.state, researchValue: e.target.value });
+                this.setState({
+                  ...this.state,
+                  researchValue: e.target.value,
+                });
               }}
             />
           </Form.Group>
@@ -78,7 +81,9 @@ class BookList extends Component {
         <Row xs={2} md={5} lg={6} className="mt-5 g-3 ">
           {this.state.selectedCategory
             .filter((book) =>
-              book.title.toLowerCase().includes(this.state.researchValue)
+              book.title
+                .toLowerCase()
+                .includes(this.state.researchValue.toLowerCase())
             )
             .map((book) => (
               <SingleBook key={book.asin} singleElement={book} />

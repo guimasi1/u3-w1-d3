@@ -12,7 +12,9 @@ class SingleBook extends Component {
       <Col key={this.props.singleElement.asin}>
         <Card
           className={`h-100 d-flex justify-content-between  ${
-            this.state.selected ? "bg-secondary-subtle" : ""
+            this.state.selected
+              ? "bg-secondary-subtle border border-4 border-danger"
+              : ""
           }`}
           onClick={() => {
             if (this.state.selected === false) {
@@ -25,9 +27,6 @@ class SingleBook extends Component {
         >
           <div>
             <Card.Img
-              className={`${
-                this.state.selected ? "border border-2 border-danger" : ""
-              }`}
               style={{ height: "270px" }}
               variant="top"
               src={this.props.singleElement.img}

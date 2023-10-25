@@ -25,10 +25,10 @@ class SingleBook extends Component {
         >
           <div>
             <Card.Img
-              className={`h-75 ${
+              className={`${
                 this.state.selected ? "border border-2 border-danger" : ""
               }`}
-              style={{ height: "150px" }}
+              style={{ height: "270px" }}
               variant="top"
               src={this.props.singleElement.img}
             />

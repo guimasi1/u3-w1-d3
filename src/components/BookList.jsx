@@ -28,10 +28,9 @@ class BookList extends Component {
             <Form.Label className="d-block text-center">Search</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Search your favourite book"
+              placeholder="Search for your favourite book"
               value={this.state.researchValue}
               onChange={(e) => {
-                console.log(this.state.researchValue);
                 this.setState({ ...this.state, researchValue: e.target.value });
               }}
             />
@@ -76,10 +75,12 @@ class BookList extends Component {
             </Button>
           </Col>
         </Row>
-        <Row>
-          {this.state.selectedCategory.map((book) => (
-            <SingleBook key={book.asin} singleElement={book} />
-          ))}
+        <Row xs={2} md={5} lg={6} className="mt-5 g-3 ">
+          {this.state.selectedCategory
+            .filter((book) => book.title.includes(this.state.researchValue))
+            .map((book) => (
+              <SingleBook key={book.asin} singleElement={book} />
+            ))}
         </Row>
       </Container>
     );

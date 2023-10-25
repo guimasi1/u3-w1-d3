@@ -4,7 +4,7 @@ import MyNavbar from "./components/MyNavbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Welcome from "./components/Welcome";
 import Booklist from "./components/BookList";
-import FantasyBooks from "./books/fantasy.json";
+// import FantasyBooks from "./books/fantasy.json";
 
 function App() {
   return (

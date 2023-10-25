@@ -77,7 +77,9 @@ class BookList extends Component {
         </Row>
         <Row xs={2} md={5} lg={6} className="mt-5 g-3 ">
           {this.state.selectedCategory
-            .filter((book) => book.title.includes(this.state.researchValue))
+            .filter((book) =>
+              book.title.toLowerCase().includes(this.state.researchValue)
+            )
             .map((book) => (
               <SingleBook key={book.asin} singleElement={book} />
             ))}
